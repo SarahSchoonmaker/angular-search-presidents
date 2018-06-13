@@ -1,0 +1,45 @@
+<h1>President Information</h1>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <input type="text" class="form-control" id="search" placeholder="Search President" [(ngModel)]="searchText" >
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <button type="submit" class="btn btn-success" (click)="search()">Search</button>
+  </div>
+</div>
+<div class="row portfolio">
+  <div class="col-sm-12 portfolio-table">
+    <table class="table table-responsive-md table-dark">
+      <thead class="mdb-color lighten-4">
+        <tr>
+          <th scope="col">
+            <a href="#" (click)="sortBy('name')">President</a>
+          </th>
+          <th scope="col">
+            <a href="#" (click)="sortBy('birthDay')">Birth Day</a>
+          </th>
+          <th scope="col">
+            <a href="#" (click)="sortBy('birthPlace')">Birth Place</a>
+          </th>
+          <th scope="col">
+            <a href="#" (click)="sortBy('deathDay')">Death Day</a>
+          </th>
+          <th scope="col">
+            <a href="#" (click)="sortBy('deathPlace')">Death Place</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let president of presidents">
+          <td><a href="{{president.link}}">{{president.name}}</a></td>
+          <td>{{president.birthDay}}</td>
+          <td>{{president.birthPlace}}</td>
+          <td>{{president.deathDay}}</td>
+          <td>{{president.deathPlace}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
