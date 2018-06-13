@@ -31,9 +31,9 @@ export class AppComponent {
       });
   }
 
-  sortBy = function (key: string, order: boolean) {
+  sortBy = function (key: string, order: boolean = false) {
     this.sortKey = key;
-    if (order == undefined) {
+    if (!order) {
       this.sortOrderAsc = !this.sortOrderAsc;
     }
     else {
